@@ -24,23 +24,47 @@ using namespace std;
 int main(int argc, char const *argv[]) {
 
 	vector<shared_ptr<Produto>> lista;
-	string nomeArquivo = "Dados.dat";
-	ifstream entrada(nomeArquivo);
-	verificaArquivo(entrada);
+	ifstream arquivo_fruta("fruta.dat");
+	ifstream arquivo_roupa("roupa.dat");
+	ifstream arquivo_bebida("bebida.dat");
+	verificaArquivo(arquivo_fruta);
+	verificaArquivo(arquivo_roupa);
+	verificaArquivo(arquivo_bebida);
 	
 	cout << "Cadastrando produtos..." << endl;
-	int quantProdutos;
-	string buffer;
-	quantProdutos = 0;
+	int quantFrutas;
+	int quantRoupas;
+	int quantBebidas;
 
-	while(getline(entrada, buffer)){
-		quantProdutos++;
+	string buffer;
+	quantFrutas = 0;
+	quantRoupas = 0;
+	quantBebidas = 0;
+
+	while(getline(arquivo_fruta, buffer)){
+		quantFrutas++;
 	}
 
-	entrada.clear();
-	entrada.seekg(0, entrada.beg);
+	while(getline(arquivo_roupa, buffer)){
+		quantRoupas++;
+	}
 
-	LerDados(entrada, lista, quantProdutos);
+	while(getline(arquivo_bebida, buffer)){
+		quantBebidas++;
+	}
+
+	arquivo_fruta.clear();
+	arquivo_fruta.seekg(0, arquivo_fruta.beg);
+
+	arquivo_roupa.clear();
+	arquivo_roupa.seekg(0, arquivo_roupa.beg);
+
+	arquivo_bebida.clear();
+	arquivo_bebida.seekg(0, arquivo_bebida.beg);
+
+	LerDados(arquivo_fruta, lista, quantFrutas);
+	LerDados(arquivo_roupa, lista, quantRoupas);
+	LerDados(arquivo_bebida, lista, quantBebidas);
 
 	int opcao;
 	shared_ptr<Produto> prod;
@@ -116,16 +140,20 @@ int main(int argc, char const *argv[]) {
 			}
 
 			case 2:
-			{
+			{	
+				int cont = 0;
 				string cod;
 				cout << "Codigo: ";
 				cin >> cod;
 				for(auto i = lista.begin(); i != lista.end(); i++) {
 					if(cod == (**i).getCodBarras()) {
 						cout << endl << "Produto removido." << endl;
+						lista.erase(i);
+						cont++;
 						break;
 					}
 				}
+				if(cont == 1) break; 
 				cout << "Nao foi possivel remover, produto inexistente." << endl;
 				break;
 			}
