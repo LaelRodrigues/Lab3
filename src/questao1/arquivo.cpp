@@ -1,8 +1,17 @@
+/**
+ * @file	arquivo.cpp
+ * @brief	arquivo corpo com a implentacao das funcoes para 
+ *			manipulacao de arquivos 
+ * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
+ * @since	25/10/2017
+ * @data	26/10/2017
+ */
+
+
 #include "arquivo.h"
 
 #include <cstdlib>
 using std::atoi;
-using std::atof;
 
 #include <string>
 using std::getline;
@@ -11,6 +20,10 @@ using std::stof;
 
 #include "produto.h"
 
+/**
+ * @brief	Funcao que verifica se o arquivo e valido
+ * @param 	arquivo Stream de entrada 
+ */
 void verificaArquivo(ifstream& arquivo) {
 	if (arquivo.bad() || !arquivo || (arquivo.is_open() == 0)) {
 		cout << "Erro ao abrir o arquivo." << endl;
@@ -19,6 +32,11 @@ void verificaArquivo(ifstream& arquivo) {
 	}
 }
 
+/**
+ * @brief	Funcao que Ler os dados do arquivo de entrada
+ * @param 	lista Lista de produtos
+ * @param 	arquivo Stream de entrada 
+ */
 void LerDados(ifstream& arquivo, vector<shared_ptr<Produto>>& lista, int tam) {
 
 	string aux, tipo, codigo, descricao, s_preco;
@@ -32,7 +50,7 @@ void LerDados(ifstream& arquivo, vector<shared_ptr<Produto>>& lista, int tam) {
 		getline(arquivo, codigo, ';');
 		getline(arquivo, descricao, ';');
 		getline(arquivo, s_preco, ';');
-		preco = atof(s_preco.c_str());
+		preco = stof(s_preco.c_str());
 		if(tipo == "Fruta") {
 			string data, s_validade, aux;
 			getline(arquivo, data, ';');
