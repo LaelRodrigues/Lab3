@@ -1,0 +1,4 @@
+1_R = Isso acontece porque a classe Fruta é derivada da classe Produto. Assim, Fruta herda de Produto todos membros declarados como public ou protected(inclusive o método de sobrecarga do operador de inserção). 
+      Dessa forma, como dentro da sobrecarga do operador de inserção há um método virtual puro(print), é necessário implementá-lo nas classes derivadas de Produto, ou seja, o método print deve ser implementado na classe Fruta, por isso a impressão funciona corretamente. 
+
+2_R= O destrutor da classe Produto é declarado como virtual para evitar problemas de memory leaks. Imaginemos, por exemplo, que o método não fosse declarado como virtual e que uma determinada classe derivada de Produto alocasse dinâmica um vetor, o mesmo nunca seria desalocado, pois	apenas o destrutor da classe base seria destruido. 
