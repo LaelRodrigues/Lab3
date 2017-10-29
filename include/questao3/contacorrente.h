@@ -4,7 +4,7 @@
  *			uma conta corrente
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	28/10/2017
- * @data	28/10/2017
+ * @date	29/10/2017
  */
 
 #ifndef CONTACORRENTE_H

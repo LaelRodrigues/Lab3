@@ -3,7 +3,7 @@
  * @brief	Definicao da classe Conta para representar uma Conta
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	28/10/2017
- * @data	28/10/2017
+ * @date	29/10/2017
  */
 
 #ifndef CONTA_H
@@ -64,10 +64,10 @@ class Conta {
 		/** @brief Retorna se a conta e especial ou nao */
 		bool getStatus();
 
-		/** @brief Retorna O limite da conta(se a conta for especial) */
+		/** @brief Retorna o limite da conta(se a conta for especial) */
 		float getLimite();
 
-		/** @brief Retorna O limite disponivel da conta(se a conta for especial) */
+		/** @brief Retorna o limite disponivel da conta(se a conta for especial) */
 		float getLimiteDisp();
 
 		/** @brief Retorna A lista de movimentacoes */
@@ -85,10 +85,10 @@ class Conta {
 		/** @brief Modifica o status(se a conta e especial ou nao)*/
 		void setStatus(bool _status);
 
-		/** @brief Modifica O limite da conta(se a conta for especial) */
+		/** @brief Modifica o limite da conta(se a conta for especial) */
 		void setLimite(float _limite);
 
-		/** @brief Modifica O limite disponivel da conta(se a conta for especial) */
+		/** @brief Modifica o limite disponivel da conta(se a conta for especial) */
 		void setLimiteDisp(float _limiteDisp);
 
 		/** @brief Adiciona uma movimentacao a lista de movimentacoes */

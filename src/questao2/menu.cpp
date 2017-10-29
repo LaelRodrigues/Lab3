@@ -1,7 +1,7 @@
 /**
  * @file	menu.cpp
- * @brief	arquivo corpo com a implentacao das funcoes que
- *			manipulacao o menu de uma agencia
+ * @brief	arquivo corpo com a implentacao das funcoes para
+ *			manipulacao do menu de uma agencia
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	26/10/2017
  * @data	27/10/2017
@@ -30,14 +30,21 @@ void menuCriarConta(Agencia& agencia) {
 	cin >> numero;
 	cout << "Saldo: ";
 	cin >> saldo;
-	cout << "Especial (1) sim (0) nao: ";
+	cout << "Especial - (1) sim (0) nao: ";
 	cin >> status;
-	if(status) {
+	if(status == 1) {
 		cout << "Limite: ";
 		cin >> limite;
+		shared_ptr<Conta> conta = make_shared<Conta> ("1234-5", numero, saldo, status, limite);
+ 		agencia.criarConta(conta);
 	}
-	shared_ptr<Conta> conta = make_shared<Conta> ("1234-5", numero, saldo, status, limite);
- 	agencia.criarConta(conta);
+	else if(status == 0) {
+		shared_ptr<Conta> conta = make_shared<Conta> ("1234-5", numero, saldo, status, limite);
+ 		agencia.criarConta(conta);
+ 	}
+ 	else {
+ 		cout << "Valor do status é invalido." << endl;
+ 	}
 }
 
 /** 

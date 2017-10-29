@@ -3,7 +3,7 @@
  * @brief	Definicao da classe Bebida para representar uma bebida
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @data	25/10/2017
+ * @date	29/10/2017
  */
 
 #ifndef _BEBIDA_H_
@@ -26,7 +26,7 @@ public:
 	Bebida();
 
 	/** @brief Construtor parametrizado */
-	Bebida(std::string _codigo, std::string _descricao, short _preco, 
+	Bebida(std::string _codigo, std::string _descricao, double _preco, 
 			int _teor_alcoolico);
 
 	/** @brief Destrutor padrao*/

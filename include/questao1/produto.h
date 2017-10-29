@@ -3,7 +3,7 @@
  * @brief	Definicao da classe Produto para representar um produto
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @data	25/10/2017
+ * @date	29/10/2017
  */
 
 
@@ -27,7 +27,7 @@ public:
 	Produto();
 
 	/** @brief Construtor parametrizado */
-	Produto(std::string _codigo, std::string _descricao, short _preco);
+	Produto(std::string _codigo, std::string _descricao, double _preco);
 
 	/** @brief Destrutor padrao*/
 	virtual ~Produto();

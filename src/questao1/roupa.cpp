@@ -4,7 +4,7 @@
  *			para representar uma roupa
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @date	25/10/2017
+ * @date	26/10/2017
  */
 
 #include <iomanip>
@@ -21,7 +21,7 @@ Roupa::Roupa() {}
  * @param _sexo Sexo da roupa
  * @param _tamanho Tamanho da roupa
  */
-Roupa::Roupa(std::string _codigo, std::string _descricao, short _preco, 
+Roupa::Roupa(std::string _codigo, std::string _descricao, double _preco, 
 	std::string _marca, char _sexo, std::string _tamanho):
 	Produto(_codigo, _descricao, _preco), marca(_marca), sexo(_sexo), tamanho(_tamanho) {}
 

@@ -1,7 +1,7 @@
 /**
  * @file	menu.h
  * @brief	arquivo de cabecalho com as definicoes das funcoes
- *			que manipulacao o menu de uma agencia
+ *			para manipulacao do menu de uma agencia
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	26/10/2017
  * @data	27/10/2017

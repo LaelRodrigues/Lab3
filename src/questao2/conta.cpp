@@ -4,7 +4,7 @@
  *			para representar um conta
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	28/10/2017
- * @date	28/10/2017
+ * @date	29/10/2017
  */
 
 
@@ -110,7 +110,7 @@ void Conta::setMovimentacoes(shared_ptr<Movimentacao>& _movimentacao) {
 }
 
 /** 
- * @param p Referencia para um objeto conta
+ * @param conta Referencia para um objeto Conta
  * @return True ou false 
  */
 bool Conta::operator==(Conta& conta) {
@@ -125,7 +125,7 @@ bool Conta::operator==(Conta& conta) {
 
 /** 
  * @param o Referencia para stream de saida
- * @param p Referencia para um o objeto Conta
+ * @param conta Referencia para um o objeto Conta
  * @return Referencia para stream de saida
  */
 ostream& operator<<(ostream& o, Conta& conta) {
@@ -133,15 +133,15 @@ ostream& operator<<(ostream& o, Conta& conta) {
 	int cont = 0;
 	for(auto i = conta.getMovimentacoes().begin(); i != conta.getMovimentacoes().end(); i++) {
 		if((**i).getIndicacao() == credito) {
-			o << std::setfill(' ') << std::setw (15) << (**i).getDescricao() << " | "
+			o << std::setfill(' ') << std::setw (12) << (**i).getDescricao() << " | "
 				 << std::setfill(' ') << std::setw (10) << (**i).getValor() << " | "
-				 << "tipo: credito";
+				 << "tipo: credito" << endl;
 				 cont++;
 		}
 		else if((**i).getIndicacao() == debito) {
-			o << std::setfill(' ') << std::setw (15) << (**i).getDescricao() << " | "
+			o << std::setfill(' ') << std::setw (12) << (**i).getDescricao() << " | "
 				 << std::setfill(' ') << std::setw (10) << (**i).getValor() << " | "
-				 << "tipo: debito";
+				 << "tipo: debito" << endl;
 				 cont++;
 		}
 	}

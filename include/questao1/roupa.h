@@ -3,7 +3,7 @@
  * @brief	Definicao da classe Roupa para representar uma roupa
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @data	25/10/2017
+ * @date	29/10/2017
  */
 
 
@@ -27,7 +27,7 @@ public:
 	Roupa();
 
 	/** @brief Construtor parametrizado */
-	Roupa(std::string _codigo, std::string _descricao, short _preco, 
+	Roupa(std::string _codigo, std::string _descricao, double _preco, 
 			std::string _marca, char _sexo, std::string _tamanho);
 	/** @brief Destrutor padrao */
 	~Roupa();

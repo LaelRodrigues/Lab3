@@ -248,7 +248,7 @@ void Agencia::transferencia(string numeroConta1, string numeroConta2, float valo
 										(**j).setMovimentacoes(movimentacao2);
 										return;
 									}
-									else if(valor < ((**i).getLimite() - (**i).getLimiteDisp())) {
+									else if(valor < ((**j).getLimite() - (**j).getLimiteDisp())) {
 										cout << "Trasferencia realizada..." << endl;
 										(**i).setSaldo((**i).getSaldo() - valor);
 										(**j).setLimiteDisp((**j).getLimiteDisp() + valor);
@@ -308,7 +308,7 @@ void Agencia::transferencia(string numeroConta1, string numeroConta2, float valo
 										(**j).setMovimentacoes(movimentacao2);
 										return;
 									}
-									else if(valor < ((**i).getLimite() - (**i).getLimiteDisp())) {
+									else if(valor < ((**j).getLimite() - (**j).getLimiteDisp())) {
 										cout << "Trasferencia realizada..." << endl;
 										(**i).setLimiteDisp((**i).getLimiteDisp() - (valor-(**i).getSaldo()));
 										(**j).setLimiteDisp((**j).getLimiteDisp() + valor);
@@ -373,7 +373,7 @@ void Agencia::transferencia(string numeroConta1, string numeroConta2, float valo
 									(**j).setMovimentacoes(movimentacao2);
 									return;
 								}
-								else if(valor < ((**i).getLimite() - (**i).getLimiteDisp())) {
+								else if(valor < ((**j).getLimite() - (**j).getLimiteDisp())) {
 									cout << "Trasferencia realizada..." << endl;
 									(**i).setSaldo((**i).getSaldo() - valor);
 									(**j).setSaldo((**i).getSaldo() + valor);
@@ -406,9 +406,11 @@ void Agencia::transferencia(string numeroConta1, string numeroConta2, float valo
 
 /** @param numeroConta Numero da conta */
 void Agencia::imitirSaldo(string numeroConta) {
+	int cont = 0;
 	for(auto i = contas.begin(); i != contas.end(); i++) {
 		if(numeroConta == ((**i).getNumero())) {
 			cout << "Saldo = " << (**i).getSaldo() << endl;
+			cont++;
 		}
 	}
 }

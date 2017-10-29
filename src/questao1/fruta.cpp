@@ -21,8 +21,8 @@ Fruta::Fruta() {}
  * @param _data Data do lote do fruta
  * @param _validade Validade da fruta  
  */
-Fruta::Fruta(std::string _codigo, std::string _descricao, short _preco, 
-	std::string _data, short _validade):
+Fruta::Fruta(std::string _codigo, std::string _descricao, double _preco, 
+	std::string _data, int _validade):
 	Produto(_codigo, _descricao, _preco), m_data_lote(_data), m_validade(_validade) {}
 
 //Destrutor padrao
@@ -35,7 +35,7 @@ Fruta::getDataLote() {
 }
 
 /** @return Validade da fruta */
-short 
+int 
 Fruta::getValidade() {
 	return m_validade;
 }
@@ -48,7 +48,7 @@ Fruta::setDataLote(std::string _data) {
 
 /** @param _validade Validade da fruta */
 void 
-Fruta::setValidade(short _validade) {
+Fruta::setValidade(int _validade) {
 	m_validade = _validade;
 }
 

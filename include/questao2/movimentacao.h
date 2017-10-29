@@ -14,7 +14,6 @@
 using std::string;
 
 /**
- * @enum enum.h
  * @brief Tipo enumeracao que identifica se a
  *		  e de credito ou debito
  */ 
@@ -23,13 +22,14 @@ enum Indicacao {
 	debito, 		/**< Movimentacao do tipo debito */
 };
 
-
 /**
  * @class 	Movimentacao movimentacao.h
  * @brief	Classe que representa uma Movimentacao
  * @details Atributos de uma movimentacao: descricao,
  *			valor e indicacao
  */
+
+
 class Movimentacao {
 	private:
 		string descricao;   	/**< Descricao da movimentacao */
@@ -47,7 +47,7 @@ class Movimentacao {
 		~Movimentacao();
 
 		/** @brief Retorna a descricao da movimentacao */
-		string getDescricao();
+  		string getDescricao();
 
 		/** @brief Retorna o valor da movimentacao */
 		float getValor();

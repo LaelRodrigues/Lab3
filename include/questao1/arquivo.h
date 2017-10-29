@@ -4,7 +4,7 @@
  *			de arquivos 
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @data	26/10/2017
+ * @date	29/10/2017
  */
 
 
@@ -43,7 +43,8 @@ void verificaArquivo(ifstream& arquivo);
 /**
  * @brief	Funcao que Ler os dados do arquivo de entrada
  * @param 	lista Lista de produtos
- * @param 	arquivo stream de entrada 
+ * @param 	arquivo stream de entrada
+ * @param 	tam Tamanho da lista de produtos 
  */
 void LerDados(ifstream& arquivo, vector<shared_ptr<Produto>>& lista, int tam);
 

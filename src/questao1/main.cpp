@@ -5,7 +5,7 @@
  *			manipulacao de arquivos 
  * @author	Lael Rodrigues(laelrodrigues7@gmail.com)
  * @since	25/10/2017
- * @data	26/10/2017
+ * @data	27/10/2017
  */
 
 #include <iostream>
@@ -191,12 +191,14 @@ int main(int argc, char const *argv[]) {
 			}
 			case 4: 
 			{
+				shared_ptr<Fruta> f;
 				cout << endl << "		Lista de Produtos		" << endl;
 				cout << endl << "-----------Frutas-----------" << endl;
 				for (auto i = lista.begin(); i != lista.end(); ++i) {	
-					
-					if(typeid(**i) == typeid(Fruta))
-					cout << (**i) << endl;
+					if(typeid(**i) == typeid(Fruta)) {
+						f = std::static_pointer_cast<Fruta>(*i);
+						cout << (**i) << endl;
+					}
 				}
 				cout << endl << "-----------Roupas-----------" << endl;
 				for (auto i = lista.begin(); i != lista.end(); ++i) {	

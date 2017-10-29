@@ -14,7 +14,6 @@
 using std::string;
 
 /**
- * @enum enum.h
  * @brief Tipo enumeracao que identifica se a
  *		  e de credito ou debito
  */ 

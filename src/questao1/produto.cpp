@@ -22,7 +22,7 @@ Produto::~Produto(){}
  * @param _descricao Descricao do produto 
  * @param _preco Preco do produto
  */
-Produto::Produto(std::string _codigo, std::string _descricao, short _preco):
+Produto::Produto(std::string _codigo, std::string _descricao, double _preco):
 	m_cod_barras(_codigo), m_descricao(_descricao), m_preco(_preco) {}
 
 
@@ -63,15 +63,15 @@ Produto::setPreco(double _preco) {
 
 /** 
  * @param o Referencia para stream de saida
- * @param p Referencia para o objeto Produto
- * @return Referencia para Stream de saida
+ * @param p Referencia para um objeto Produto
+ * @return Referencia para stream de saida
  */
 std::ostream& operator<< (std::ostream &o, Produto const &p) {
 	return p.print(o);
 }
 
 /** 
- * @param p Referencia para o objeto Produto
+ * @param p Referencia para um objeto Produto
  * @return Soma do preco de dois produtos
  */
 double Produto::operator+(const Produto &p) {
@@ -79,7 +79,7 @@ double Produto::operator+(const Produto &p) {
 }
 
 /** 
- * @param p Referencia para o objeto Produto
+ * @param p Referencia para um objeto Produto
  * @return Subtracao do preco de dois produtos
  */
 double Produto::operator-(const Produto &p) {
@@ -87,7 +87,7 @@ double Produto::operator-(const Produto &p) {
 }
 
 /** 
- * @param p Referencia para o objeto Produto
+ * @param p Referencia para um objeto Produto
  * @return True ou false 
  */
 bool Produto::operator==(const Produto &p) {
